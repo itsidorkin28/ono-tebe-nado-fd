@@ -175,7 +175,7 @@
 .lots {
     max-width: 1100px;
     margin: 0 auto; 
-    padding: 180px 0 181px;
+    padding: 180px 0 0;
 }
 
 .lots__heading {
@@ -275,61 +275,62 @@
 
 /* About */
 .about {
-    display: grid;
-    grid-template-columns: 330px 1fr;
-    gap: 25px;
-    padding: 0 40px 0;
+    display: block;
+    background-color: #fff;
+    margin-top: 155px;
+    padding: 0px 2px 0 42px;
 }
+
+.about__grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto auto;   
+    grid-template-areas:
+      "about__column about__title"
+      "about__column about__text";
+    column-gap: 40px;                
+}
+
 
 .about__column {
     display: flex;
-    flex-direction: column;
+    grid-area: about__column;
+    justify-self: center;
 }
-.about__logo-circle {
-    background-color: #000;
-    border-radius: 50%;
+
+.about__logo {
+    display: flex;
+    position: relative;
     width: 240px;
     height: 240px;
-    display: flex;
-    align-items: center;
+    border-radius: 50%;
+    background-color: #000;
     justify-content: center;
-}
-.about__logo {
-    position: relative;
-    width: 148px;
-    height: 114px;
-    margin-left: 40px;
+    justify-self: center;
+
 }
 
 .about__logo-image {
-    width: 148px;
-    height: 114px;
+    width: 147px;
+    align-self: center;
 }
 
-
 .about__title {
-    margin-top: 100px;
-    font-weight: 600;
-    font-size: 44px;
-    line-height: 28px;
-    margin-bottom: 16px;
-    text-align: start;
+    grid-area: about__title;
+    align-self: start;   
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 100px 0 100px 0;           
 }
 
 .about__text {
-    font-size: 14px;
-    line-height: 18px;
-    color: #000;
-    max-width: 544px;
-
-}
-
-.about__text p {
-  margin-bottom: 12px; 
-}
-
-.about__text p:last-child {
-  margin-bottom: 0; 
+    grid-area: about__text;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;          
+    margin: 0;
 }
 
 
@@ -340,6 +341,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 90px 50px;
+    margin-top: 90px;
 }
 
 .footer__menu {
