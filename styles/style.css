@@ -9,29 +9,27 @@
 }
 
 .header__menu {
-    justify-self: start;
+    justify-self: left;
 }
 
 .header__links-list {
-  display: flex;
-  gap: 32px;             
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    list-style-type: circle;
+    gap: 32px;
 }
 
-.header__links-list-item {
-  position: relative;
+
+.header__links-list-item:first-of-type {
+    list-style-type: none;
 }
 
-.header__links-list-item:not(:last-child)::after {
-  content: "○";           
-  position: absolute;
-  right: -20px;           
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;       
-  line-height: 1;
+.header__links {
+    text-decoration: underline;
+    text-underline-offset: 8%;
+}   
+
+.header__link_active {
+    text-decoration: none;
 }
 
 
